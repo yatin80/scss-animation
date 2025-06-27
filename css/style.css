@@ -1,0 +1,166 @@
+body {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.animation-circle {
+  position: relative;
+  border: 1px solid #ccc;
+  height: 70px;
+  width: 300px;
+}
+.animation-circle .circle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background-color: turquoise;
+  animation: move 1s infinite;
+  transform-origin: center center;
+}
+.animation-circle .circle:nth-child(1) {
+  left: 30px;
+  animation-delay: 0.1s;
+}
+.animation-circle .circle:nth-child(2) {
+  left: 60px;
+  animation-delay: 0.2s;
+}
+.animation-circle .circle:nth-child(3) {
+  left: 90px;
+  animation-delay: 0.3s;
+}
+.animation-circle .circle:nth-child(4) {
+  left: 120px;
+  animation-delay: 0.4s;
+}
+.animation-circle .circle:nth-child(5) {
+  left: 150px;
+  animation-delay: 0.5s;
+}
+.animation-circle .circle:nth-child(6) {
+  left: 180px;
+  animation-delay: 0.6s;
+}
+.animation-circle .circle:nth-child(7) {
+  left: 210px;
+  animation-delay: 0.7s;
+}
+.animation-circle .circle:nth-child(8) {
+  left: 240px;
+  animation-delay: 0.8s;
+}
+@keyframes move {
+  0% {
+    transform: translateY(0px) scale(1);
+    background-color: turquoise;
+  }
+  50% {
+    transform: translateY(50px) scale(0.4);
+    background-color: blue;
+  }
+  100% {
+    transform: translateY(0px) scale(1);
+    background-color: turquoise;
+  }
+}
+
+.box {
+  width: 300px;
+  height: 300px;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border: 2px solid #d7d7d7;
+  transition: all 0.3s ease;
+}
+.box::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: 0;
+  height: 2px;
+  background: red;
+  transition: 100ms width ease 300ms;
+  -webkit-transition: 100ms width ease 300ms;
+}
+.box::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 2px;
+  height: 0;
+  background: red;
+  transition: all 0.3s ease 0.4s;
+  transition: 100ms height ease 200ms;
+  -webkit-transition: 100ms height ease 200ms;
+}
+.box-inner::before {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 0;
+  height: 2px;
+  background: red;
+  transition: all 0.3s ease 0.2s;
+  transition: 100ms width ease 100ms;
+  -webkit-transition: 100ms width ease 100ms;
+}
+.box-inner::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: -2px;
+  width: 2px;
+  height: 0%;
+  background: red;
+  transition: all 0.3s ease 0s;
+  transition: 100ms height ease 0ms;
+  -webkit-transition: 100ms height ease 0ms;
+}
+.box:hover {
+  background-color: #fff;
+  border-color: transparent;
+}
+.box:hover::before {
+  width: 302px;
+  transition: 100ms width ease 0ms;
+  -webkit-transition: 100ms width ease 0ms;
+}
+.box:hover::after {
+  height: 302px;
+  transition: 100ms height ease 100ms;
+  -webkit-transition: 100ms height ease 100ms;
+}
+.box:hover .box-inner::before {
+  width: 302px;
+  transition: 100ms width ease 200ms;
+  -webkit-transition: 100ms width ease 200ms;
+}
+.box:hover .box-inner::after {
+  height: 302px;
+  transition: 100ms height ease 300ms;
+  -webkit-transition: 100ms height ease 300ms;
+}
+
+.slider {
+  position: relative;
+  left: 10px;
+  transition: left 0.8s;
+  background-color: #f5f5f5;
+  padding: 15px;
+  border-radius: 3;
+}
+.slider:hover {
+  left: 50px;
+  background-color: #ff00ff;
+}/*# sourceMappingURL=style.css.map */
